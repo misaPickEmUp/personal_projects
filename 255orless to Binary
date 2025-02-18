@@ -12,7 +12,7 @@ int two_raise = 4;
 int one_raise = 2;
 int zero_raise = 1;
 
-// Max value represented by a 8 bit number
+// 255 is the max value represented by a 8 bit number
 
 
 
