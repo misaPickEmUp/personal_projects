@@ -3,10 +3,16 @@ using namespace std;
 
 int main (){
 
+int seven_raise = 128;
+int six_raise = 64;
+int five_raise = 32;
+int four_raise = 16;
+int three_raise = 8;
+int two_raise = 4;
+int one_raise = 2;
+int zero_raise = 1;
 
-
-
-
+// 255 is the max value represented by a 8 bit number
 
 
 
