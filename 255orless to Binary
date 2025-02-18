@@ -11,9 +11,22 @@ int three_raise = 8;
 int two_raise = 4;
 int one_raise = 2;
 int zero_raise = 1;
-
 // 255 is the max value represented by a 8 bit number
 
+int user_input;
+int input_to_binary;
+
+cout << "Enter number under 255 to be converted to binary" << endl;
+cin >> user_input;
+
+
+if (128 < user_input) {
+  // Code to execute if condition1 is true
+} else if (128 > user_input) {
+  // Code to execute if condition1 is false and condition2 is true
+} else {
+  // Code to execute if both condition1 and condition2 are false
+}
 
 
 return 0;
