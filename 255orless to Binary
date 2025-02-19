@@ -80,7 +80,7 @@ do
   zero_raise = 0;
   }
   
- cout << original_input << " in binary is " << seven_raise << six_raise << five_raise << four_raise << three_raise << two_raise << one_raise << zero_raise << " (code translated)" << endl;
+ cout << original_input << " in binary is " << seven_raise << six_raise << five_raise << four_raise << three_raise << two_raise << one_raise << zero_raise << "(code translated)" << endl;
     
 }while (run_again ==  'Y' || run_again == 'y');
 cout << "Would u like to try another number? type Y or y if yes" << endl;
