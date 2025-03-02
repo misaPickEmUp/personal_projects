@@ -4,7 +4,14 @@ using namespace std;
 
 int main (){
 
-int user_input;
+
+// 255 is the max value represented by a 8 bit number
+char run_again;
+
+do 
+{
+ int user_input;
+    
 cout << "Enter number under 255 to be converted to binary" << endl;
 cin >> user_input;
 bitset<8> binary(user_input);
@@ -19,11 +26,8 @@ int two_raise; //4
 int one_raise; //2
 int zero_raise; //1
 int original_input;
-// 255 is the max value represented by a 8 bit number
-char run_again;
 original_input = user_input;
-do 
-{
+
   if (user_input >= 128){
   user_input = user_input - 128;
   seven_raise = 1; 
@@ -85,8 +89,6 @@ do
  cin >> run_again;
 
 }while (run_again ==  'Y' || run_again == 'y');
-
-
 
 return 0;
 
