@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+
+
+
+int main(){
+double amount_entered = 0;
+char user_input = 0;
+
+vector<double> accounts_listed;
+
+
+cout << "Would you like to add an account?(Y/N)" << endl;
+cin >> user_input;
+if(user_input == 'Y'){
+	user_input = 0; //reset input value
+	
+}
+	
+	
+	
+return 0;    
+}
