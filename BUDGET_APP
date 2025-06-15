@@ -22,3 +22,54 @@ if(user_input == 'Y'){
 	
 return 0;    
 }
+
+OVERVIEW
+Display_NET WORTH = Assets - Debt 
+Display_AllAccounts
+ - Account1, Acc...(Name -> Type -> Amount)
+
+Display_
+Add_Account(Name, Amount, Type) ARRAY, 
+Add_Transaction(Income, Paycheck, Asset, Debt, Subscription, Other(custom)),
+Add_Budget, Add_Hypothetical Budget
+
+
+
+If(Add_Account)
+Display_ Account Type
+ - Cash,
+ - Checkings, 
+ - Savings, APR Feature(percentage and month deposit day)
+ - Investments, Stock Tracking 
+ - CreditCard, APR Feature 
+ -  Loan, APR Feature
+Display_ Account Name
+Display_ Account Amount
+
+If(Add_Transaction) 
+Display_Simple Decimal Calculator
+Display_Memo Line
+Display_Transaction Type
+ - Asset, Paycheck, Checkings, Savings, Investments
+ - Debt, Credit Card
+ - Bill / Subscription, Add Recurring Date
+ - Other, Add Date/Recurring, 
+(Subscription Add Date)
+Display_Upload Receipt 
+
+If(Add_Budget)
+Display_ Add Goal Name,
+Display_ Total Amount,
+Display_ Amount paid per month,
+
+If(Add_Hypothetical Budget)
+Display_ Hypothetical Amount,
+Display_ All Accounts,
+ - Allocate amounts with small transaction calculator 
+ - subtract amount added to hypothetical budget
+
+PHONE WDIGET
+
+FREE - Display_ Net worth
+User pick specific account
+Display_ Account -> Total
