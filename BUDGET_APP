@@ -16,112 +16,123 @@ int main(){
     char UserMenuInput;
     char UserAddAnotherAccountInput;
     bool added;
+    bool ExitProgram;
+    char ExitProgramUserInput;
     int i;
     
     
     
-    cout << "Your Net Worth is: " << Assets - Liabilities << endl;
-    cout << "Your accounts are listed below." << endl;
-    for(i = 0; i < AccountNames.size(); i++){
-        cout << "Account Name: " << AccountNames[i] << endl;
-        cout << "Account Type: " << AccountTypes[i] << endl;
-        cout << "Account Amount: " << AccountAmount[i] << endl;
-        cout << "----------------"  << endl;
-    }
-    cout << endl;
     
-    
-    
-    
-    
-    
-//Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option//Mini Menu Option
+// Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start // Main Program Start
 
-
-    cout << "Type 'A' to add account, Type 'B' to add transaction, Type 'C' to add budget." << endl;
-    cin >> UserMenuInput;cout << endl;
-    switch(UserMenuInput){
-        case 'A':
-/*
- If(Add_Account)
- Display_ Account Type
- - Cash,
- - Checkings,
- - Savings, APR Feature(percentage and month deposit day)
- - Investments, Stock Tracking
- - CreditCard, APR Feature
- -  Loan, APR Feature
- Display_ Account Name
- Display_ Account Amount
-*/
-            do{cout << "ADDING ACCOUNT" << endl;
-                cin.ignore();
-                cout << "Enter Account Name" << endl;
-                getline(cin, UserAccountNameInput);
-                AccountNames.push_back(UserAccountNameInput);
-                UserAccountNameInput.clear();
-                
-                UserAccountTypeInput.clear();
-                cout << "Enter Account Type" << endl;
-                getline(cin, UserAccountTypeInput);
-                AccountTypes.push_back(UserAccountTypeInput);
-                UserAccountTypeInput.clear();
-
-                UserAccountAmountInput = 0;
-                cout << "Enter Account Ammount" << endl;
-                cin >> UserAccountAmountInput;
-                AccountAmount.push_back(UserAccountAmountInput);
-                UserAccountAmountInput = 0;
-                
-                cout << "Would you like to add another account?" << endl;
-                cout << "Type 'Y' for Yes, Type 'N' for No" << endl;
-                cin.ignore();
-                cin >> UserAddAnotherAccountInput; cout << endl;
-                switch(UserAddAnotherAccountInput){
-                    case 'Y':
-                        added = true;
-                        break;
-                    case 'N':
-                        cout << "Your now being directed to the main menu." << endl;
-                        added = false;
-                        break;
-                    default:
-                        cout << "Your now being directed to the main menu." << endl;
-                        added = false;
-                        break;
-                }
-            }while(added);
-            break;
-        case 'B':
-/*
- If(Add_Transaction)
- Display_Simple Decimal Calculator
- Display_Memo Line
- Display_Transaction Type
- - Asset, Paycheck, Checkings, Savings, Investments
- - Debt, Credit Card
- - Bill / Subscription, Add Recurring Date
- - Other, Add Date/Recurring,
- (Subscription Add Date)
- Display_Upload Receipt
-*/
-            cout << "ADDING TRANSACTION" << endl;
-            break;
-        case 'C':
-/*
- If(Add_Budget)
- Display_ Add Goal Name,
- Display_ Total Amount,
- Display_ Amount paid per month,
-*/
-            cout << "CREATING BUDGET" << endl;
-            break;
-        default:
-            break;
-    }
-
-    
-    
+    do{ //exit program 'do' loop
+        cout << "Your Net Worth is: " << Assets - Liabilities << endl;
+        cout << "Your accounts are listed below." << endl;
+        for(i = 0; i < AccountNames.size(); i++){
+            cout << "Account Name: " << AccountNames[i] << endl;
+            cout << "Account Type: " << AccountTypes[i] << endl;
+            cout << "Account Amount: " << AccountAmount[i] << endl;
+            cout << "----------------"  << endl;
+        }
+        cout << endl;
+        
+        
+        
+        
+        
+        
+        //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option //Mini Menu Option//Mini Menu Option
+        
+        cout << "Type 'A' to add account, Type 'B' to add transaction, Type 'C' to add budget." << endl;
+        cin >> UserMenuInput;cout << endl;
+        switch(UserMenuInput){
+            case 'A':
+                /*
+                 If(Add_Account)
+                 Display_ Account Type
+                 - Cash,
+                 - Checkings,
+                 - Savings, APR Feature(percentage and month deposit day)
+                 - Investments, Stock Tracking
+                 - CreditCard, APR Feature
+                 -  Loan, APR Feature
+                 Display_ Account Name
+                 Display_ Account Amount
+                 */
+                do{cout << "ADDING ACCOUNT" << endl;
+                    cin.ignore();
+                    cout << "Enter Account Name" << endl;
+                    getline(cin, UserAccountNameInput);
+                    AccountNames.push_back(UserAccountNameInput);
+                    UserAccountNameInput.clear();
+                    
+                    UserAccountTypeInput.clear();
+                    cout << "Enter Account Type" << endl;
+                    getline(cin, UserAccountTypeInput);
+                    AccountTypes.push_back(UserAccountTypeInput);
+                    UserAccountTypeInput.clear();
+                    
+                    UserAccountAmountInput = 0;
+                    cout << "Enter Account Amount" << endl;
+                    cin >> UserAccountAmountInput;
+                    AccountAmount.push_back(UserAccountAmountInput);
+                    UserAccountAmountInput = 0;
+                    
+                    cout << "Would you like to add another account?" << endl;
+                    cout << "Type 'Y' for Yes, Type 'N' for No" << endl;
+                    cin.ignore();
+                    cin >> UserAddAnotherAccountInput; cout << endl;
+                    switch(UserAddAnotherAccountInput){
+                        case 'Y':
+                            added = true;
+                            break;
+                        case 'N':
+                            cout << "Your now being directed to the main menu." << endl;
+                            added = false;
+                            break;
+                        default:
+                            cout << "Your now being directed to the main menu." << endl;
+                            added = false;
+                            break;
+                    }
+                }while(added);
+                break;
+            case 'B':
+                /*
+                 If(Add_Transaction)
+                 Display_Simple Decimal Calculator
+                 Display_Memo Line
+                 Display_Transaction Type
+                 - Asset, Paycheck, Checkings, Savings, Investments
+                 - Debt, Credit Card
+                 - Bill / Subscription, Add Recurring Date
+                 - Other, Add Date/Recurring,
+                 (Subscription Add Date)
+                 Display_Upload Receipt
+                 */
+                cout << "ADDING TRANSACTION" << endl;
+                break;
+            case 'C':
+                /*
+                 If(Add_Budget)
+                 Display_ Add Goal Name,
+                 Display_ Total Amount,
+                 Display_ Amount paid per month,
+                 */
+                cout << "CREATING BUDGET" << endl;
+                break;
+            default:
+                break;
+        }
+        
+        cout << "Type 'C' to close the program, Type any other character to refresh the program." << endl;
+        cin >> ExitProgramUserInput;
+        if(ExitProgramUserInput == 'C'){
+            ExitProgram = false;
+        }else{
+            ExitProgram = true;
+        }
+    }while(ExitProgram);
 return 0;} //winky face
 
 /*
