@@ -75,9 +75,11 @@ int main(){
                 
                 cout << "Would you like to add another account?" << endl;
                 cout << "Type 'Y' for Yes, Type 'N' for No" << endl;
+                cin.ignore();
                 cin >> UserAddAnotherAccountInput; cout << endl;
                 switch(UserAddAnotherAccountInput){
                     case 'Y':
+                        added = true;
                         break;
                     case 'N':
                         cout << "Your now being directed to the main menu." << endl;
@@ -117,9 +119,11 @@ int main(){
         default:
             break;
     }
-    
 
     
+    
+return 0;} //winky face
+
 /*
 IDEAS
  
@@ -136,5 +140,4 @@ PHONE WDIGET
      User pick specific account
      Display_ Account -> Total
 */
-    return 0;
-}
+
