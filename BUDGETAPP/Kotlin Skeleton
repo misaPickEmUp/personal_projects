@@ -1,0 +1,48 @@
+fun main() {
+    // Define a data class to hold account information
+    data class Account(var name: String, var type: String, var amount: Int)
+    // If you want to store multiple accounts, you'd typically use a mutable list
+    var accountsList = mutableListOf<Account>()
+    var addAnother = true // Flag to control the loop
+
+
+
+    do {
+    println("Enter Account Name: ")
+    var accountName = readln() // Reads the entire line as a String
+
+    println("Enter Account Type: ")
+    var accountType = readln() // Reads as String
+
+    println("Enter Account Amount: ")
+    var accountAmount = readLine()!!
+    var accountInteger = accountAmount.toInt()
+
+
+    // Create an instance of your Account data class
+    var newAccount = Account(accountName, accountType, accountInteger)
+
+
+    accountsList.add(newAccount)
+
+
+    println("You successfully added $accountName($accountInteger) in your accounts")
+println("\nWould you like to add another account?(yes/no)")
+        var response = readln().lowercase()
+        addAnother = response == "yes" // Set addAnother to true if response is "yes"
+        println() // Add a blank line for better readability
+    } while (addAnother)
+
+    // To see what's in your list (for demonstration)
+    if(accountsList.isNotEmpty()) {
+
+        println("\nCurrent accounts:")
+        accountsList.forEach { account ->
+            println("Name: ${account.name}, Type: ${account.type}, Amount: ${account.amount}")
+        }
+    } else {
+        println("No accounts were added.")
+    }
+}
+
+
