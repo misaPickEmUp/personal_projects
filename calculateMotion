@@ -1,15 +1,21 @@
 #include <iostream>
 #include <cmath>
 #include <algorithm>
+#include <variant>
+#include <string>
 using namespace std;
 
 void motionTypeMenu();
+void oneDMotion();
+
 int main() {
 	int userMotionTypeChoice;
+	motionTypeMenu();
 	cin >> userMotionTypeChoice;
 	
 	switch (userMotionTypeChoice) {
 	case 1:
+		oneDMotion();
 		break;
 	default:
 		break;
@@ -17,10 +23,100 @@ int main() {
 
 	return 0;
 }
+
 void motionTypeMenu() {
 	cout << "Hello, please select the type of motion you wish to calculate:\n";
 	cout << "Type (1) for 1D motion\n";
 	cout << "Type (2) for 2D motion\n";
 	cout << "Type (3) for Circular motion\n";
-	cout << 
+	cout << "Type (4) for Relative motion\n";
+}
+
+void oneDMotion() {
+	cout << "You have selected 1D motion. Enter the values you have available. Type (?) for unknown values.\n";
+	cout << "Enter Initial Velocity(Vi): ";
+	string Vi;
+	cin >> Vi; cout << endl;
+
+	cout << "Enter Final Velocity(Vf): ";
+	string Vf;
+	cin >> Vf; cout << endl;
+
+	cout << "Enter Acceleration(a): ";
+	string a;
+	cin >> a; cout << endl;
+
+	cout << "Enter Displacement(d): ";
+	string d;
+	cin >> d; cout << endl;
+
+	cout << "Enter time(t): ";
+	string t;
+	cin >> t; cout << endl;
+
+	if (Vi == "?") {//calculate for initial velocity
+		if (Vf == "?") {
+			if (a == "?" || d == "?" || t == "?") {
+				cout << "Not enough information to calculate initial velocity.\n";
+				return;
+			}else {// use displacement, acceleration and time / Vi = (d - 0.5*a*t^2) / t
+				double doubleA = stod(a);
+				double doubleD = stod(d);
+				double doubleT = stod(t);
+				double CalculatedVi = (doubleD - 0.5 * doubleA * pow(doubleT, 2)) / doubleT;
+				cout << "The calculated initial velocity is: " << CalculatedVi << "\n";
+				return;
+			}	
+		}
+		if (a == "?") {
+			if (Vf == "?" || d == "?" || t == "?") {
+				cout << "Not enough information to calculate initial velocity.\n";
+				return;
+			}
+			else {//Use displacement, Final velocty and time / Vi = (2*d)/t - Vf
+				double doubleVf = stod(Vf);
+				double doubleD = stod(d);
+				double doubleT = stod(t);
+				double CalculatedVi = (2 * doubleD) / doubleT - doubleVf;
+				cout << "The calculated initial velocity is: " << CalculatedVi << "\n";
+				return;
+			}
+		}
+		if (d == "?") {
+			if (a == "?" || Vf == "?" || t == "?") {
+				cout << "Not enough information to calculate initial velocity.\n";
+				return;
+			}else {// use final velocity, acceleration and time / Vi = Vf - a*t
+				double doubleA = stod(a);
+				double doubleVf = stod(Vf);
+				double doubleT = stod(t);
+				double CalculatedVi = doubleVf - doubleA * doubleT;
+				cout << "The calculated initial velocity is: " << CalculatedVi << "\n";
+				return;
+			}
+		}
+		if (t == "?") {
+			if (a == "?" || d == "?" || Vf == "?") {
+				cout << "Not enough information to calculate initial velocity.\n";
+				return;
+			}else {//use final velocity, acceleration and displacement / Vi = sqrt(Vf^2 - 2a*d)
+				double doubleVf = stod(Vf);
+				double doubleD = stod(d);
+				double doubleA = stod(a);
+				double CalculatedVi = sqrt(pow(doubleVf, 2) - 2 * doubleA * doubleD);
+				cout << "The calculated initial velocity is: " << CalculatedVi << "\n";
+				return;
+			}
+		}
+		return;
+	}
+
+
+	//calculate displacement = velocity * time
+	// final velocity(acceleration & time) = Vi + a*t
+	//calculate velocity = displacement / time
+	//calculate acceleration
+	//calculate time = displacement / velocity
+
+		return;
 }
