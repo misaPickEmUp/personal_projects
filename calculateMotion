@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+using namespace std;
+
+void motionTypeMenu();
+int main() {
+	int userMotionTypeChoice;
+	cin >> userMotionTypeChoice;
+	
+	switch (userMotionTypeChoice) {
+	case 1:
+		break;
+	default:
+		break;
+	}
+
+	return 0;
+}
+void motionTypeMenu() {
+	cout << "Hello, please select the type of motion you wish to calculate:\n";
+	cout << "Type (1) for 1D motion\n";
+	cout << "Type (2) for 2D motion\n";
+	cout << "Type (3) for Circular motion\n";
+	cout << 
+}
